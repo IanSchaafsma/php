@@ -15,9 +15,10 @@ $result = $connection->query('SELECT * FROM `honey`');
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <?php foreach($result as $row):?>
+
     <section class="card">
 
-    <?php foreach($result as $row):?>
         <article class="card-list__honey">
             <figure class="card-list__img">
                 <img src="img/<?php echo $row['image']; ?>" alt="A small jar of honey">
@@ -28,8 +29,8 @@ $result = $connection->query('SELECT * FROM `honey`');
                 <p> <?php echo $row['description']; ?> </p>
             </header>
         </article>
-    <?php endforeach; ?>
 
     </section>
+    <?php endforeach; ?>
 </body>
 </html>
