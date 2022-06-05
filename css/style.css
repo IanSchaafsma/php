@@ -12,6 +12,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     font-family: sans-serif;
     font-size: 2rem;
     background: #eee;
@@ -60,3 +61,12 @@ header h3{
     font-size: 100%;
 }
 
+.klikMeer{
+    text-decoration: none;
+    color: black;
+    background: rgb(226, 226, 226);
+    font-size: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

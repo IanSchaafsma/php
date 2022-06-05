@@ -12,7 +12,7 @@ $result = $connection->query('SELECT * FROM `honey`');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Honey</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <?php foreach($result as $row):?>
@@ -26,8 +26,9 @@ $result = $connection->query('SELECT * FROM `honey`');
             <header>
                 <h3> <?php echo $row['title']; ?> </h3>
                 <p>$ <?php echo $row['price']; ?> </p>
-                <p> <?php echo $row['description']; ?> </p>
+                <p> <?php echo $row['intro']; ?> </p>
             </header>
+            <a class="klikMeer" href="details.php?id=<?php echo $row['id']; ?>" >Meer info</a>
         </article>
 
     </section>
