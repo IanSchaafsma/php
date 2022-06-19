@@ -8,7 +8,7 @@ $phone = '';
 $team = '';
 $message = '';
 
-// opslag variabelen array voor errors
+// opslag variabelen array voor errors //
 $errors = [];
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
