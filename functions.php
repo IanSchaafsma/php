@@ -20,4 +20,16 @@ function dbConnect()
         exit;
     }
 }
+
+function isEmpty($value){
+    return empty($value);
+}
+
+function isValidEmail($value){
+    $cleaned = filter_var($value, FILTER_SANITIZE_EMAIL);
+    if($cleaned == false){
+        return false;
+    }
+    return filter_var($cleaned, FILTER_VALIDATE_EMAIL);
+}
 ?>

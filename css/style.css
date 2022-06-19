@@ -58,7 +58,8 @@ header{
 }
 
 header h3{
-    font-size: 100%;
+    font-size: 80%;
+    background: rgb(216, 216, 216);
 }
 
 .klikMeer{

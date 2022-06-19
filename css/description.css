@@ -256,6 +256,10 @@ img {
     list-style: none;
 }
 
+.contact-link{
+    font-size: 200%
+}
+
 /* Media queries */
 @media all and (min-width: 900px) {
     .honey-details section {

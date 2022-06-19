@@ -51,12 +51,13 @@ $honeys = $statement->fetch(PDO::FETCH_ASSOC);
                 <a href="index.php">Terug naar het overzicht</a>
             </article>
             <aside class="honey-sidebar">
-                <h3>Andere plaatsen</h3>
+                <h3>Meer honing</h3>
                 <ul>
-                    <li>Pantheon</li>
-                    <li>De Dam</li>
-                    <li>Sagrada Familia</li>
-                    <li>Tower Bridge</li>
+                    <li>Honey</li>
+                    <li>Honey</li>
+                    <li>Honey</li>
+                    <li>Honey</li>
+                    <li><a class="contact-link" href="contact.php">Contact us</a></li>
                 </ul>
             </aside>
         </section>
