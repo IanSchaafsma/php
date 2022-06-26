@@ -4,70 +4,880 @@
     box-sizing: border-box;
 }
 
+:root{
+
+}
+
 html{
     font-size: 62.5%; /* 1rem === 10px */
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+input[type="button"], input[type="submit"], button{
+    cursor: pointer;
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: sans-serif;
     font-size: 2rem;
-    background: #eee;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.card{
-    width: 30rem;
-    height: 40rem;
-    background: #eee;
-    border-radius: 0.5rem;
-    display: flex;
-    box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.2);
-}
-
-.card-list__honey{
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(../img/webp/backgroundskye.webp);
     width: 100%;
-    height: 100%;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: 0% -10%;    
 }
 
-.card-list__img{
+.header{
+    background-image: url(../img/webp/background.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 100%; 
+    height: 110vh;
     width: 100%;
-    height: 75%;
-}
-
-.card-list__img img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-}
-
-header{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 75%;
-    gap: 0.5rem;
-    padding: 1rem;
+    gap: 2rem;
+    padding: 4rem;
+    margin-top: 2rem;
 }
 
-header h3{
-    font-size: 80%;
-    background: rgb(216, 216, 216);
+.header__logo{
 }
 
-.klikMeer{
-    text-decoration: none;
-    color: black;
-    background: rgb(226, 226, 226);
-    font-size: 70%;
+.logo__img{
+    width: 30rem;
+    height: 10rem;
+    object-fit: contain;
+}
+
+.header__heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    color: white;
+}
+
+.heading__title{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 250%;
+    text-shadow: 2px 2px rgba(17, 49, 89, 0.4);
+}
+
+.heading__intro{
+    width: 50rem;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 1px 2px rgba(17, 49, 89, 0.4);
+}
+
+.header__counter{
+    margin-bottom: 25rem;
+    font-weight: 800;
+    font-size: 900%;
+    color: white;
+    text-shadow: 5px 5px rgba(17, 49, 89, 0.4);
+}
+
+main{
+    background: linear-gradient(#fff, #b4dbe1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.donateForm{
+    color: rgba(17,50,89, 1);
+    width: 40rem;
+    height: 47.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    gap: 2rem;
+    box-shadow: 0 0.2rem 2rem 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-bottom: 10rem;
+}
+
+.donateForm::after{
+    content: "";
+    width: 33.7rem;
+    height: 0.2rem;
+    border-radius: 5rem;
+    background: #e2e8f0;
+    position: absolute;
+    bottom: 15rem;
+    left: 3.2rem;
+}
+
+.donateForm__heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.donateForm__heading h3{
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.donateForm__heading p{
+    font-size: 85%;
+    font-weight: 700;
+}
+
+.donateForm__premade{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.premade__option{
+    list-style: none;
+    display: flex;
+}
+
+.premade__option input{
+    appearance: none;
+}
+
+
+input[type="radio"]:checked + label{
+    background: rgba(17,50,89, 1);
+    color: #FFF;
+}
+
+
+.premade__option label{
+    height: 5rem;
+    width: 16.5rem;
+    border-radius: 0.6rem;
+    color: black;
+    background: rgba(237,242,247,1);
+    border: 0.1rem solid rgba(203,213,224,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80%;
+    cursor: pointer;
+}
+
+.donateForm__other{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.other__input{
+    background: rgba(237,242,247,1);
+    border: 0.1rem solid rgba(203,213,224,1);
+    height: 5ch;
+    font-family: 'Montserrat', sans-serif;
+    width: 34rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1.2rem 1rem;
+    border-radius: 0.6rem;
+    resize: none;
+}
+
+.other__input:focus{
+    background: rgba(17,50,89, 1);
+    color: #FFF;
+}
+
+
+input::placeholder, textarea::placeholder{
+    color: #a0aec0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+}
+
+.donateForm__payment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    margin-top: 3.8rem;
+}
+
+.payment__next{
+    width: 34rem;
+    height: 5.7rem;
+    border-radius: 10rem;
+    border: none;
+    background: #dc582a;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment__crypto{
+    border: none;
+    background: none;
+    font-size: medium;
+    text-decoration: underline;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-weight: 600;
+    font-size: 75%;
+}
+
+.toProjects{
+    height: 20rem;
+    width: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toProjects__button{
+    border: none;
+    border-radius: 5rem;
+    height: 6rem;
+    width: 100%;
+    background: linear-gradient(to right, #88b636 0%, #5d9b22 51%, #88b636 100%);
+    background-size: 250% auto;
+    transition: all .4s;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-decoration: none;
+}
+
+.toProjects__button:hover{
+    background-position: right center;
+}
+
+.toProjects__checkmark{
+    font-size: 2.8rem;
+}
+
+.toProjects__arrow{
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.24);
+    padding: 0.5rem 1.5rem;
+    border-radius: 5rem;
+}
+
+.leaderbord{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 10rem;
+    color: rgba(17,50,89, 1);
+}
+
+.leaderbord__heading{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 320%;
+}
+
+.leaderbord__buttons{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.leaderbord__search{
+    appearance: none;
+    width: 14.5rem;
+    height: 4rem;
+    border: none;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    text-transform: uppercase;
+    box-shadow: 0 0.2rem 2rem 0 rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+    font-size: 1.5rem;
+    background: white;
+    color: rgba(17,50,89, 1);
+}
+
+.leaderbord__search img{
+    width: 2rem;
+}
+
+.leaderbord__filters{
+    display: flex;
+    border-radius: 5rem;
+    background: rgba(226, 232, 240, 0.9);
+}
+
+.leaderbord__filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter__sort{
+    appearance: none;
+}
+
+.filter__sortRecent{
+    width: 14rem;
+    height: 3.8rem;
+    border: none;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.2rem 2rem 0 rgba(0, 0, 0, 0.2);
+    background: white;
+    font-size: 1.4rem;
+    font-weight:700;
+    text-transform: uppercase;
+}
+
+.filter__sortMost{
+    width: 12rem;
+    height: 3.8rem;
+    border: none;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight:700;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.leaderbord__list{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.leaderbord__card{
+    width: 80%;
+    height: 8rem;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+    border-radius: 0.9rem;
+    box-shadow: 0 0.1rem 0.5rem 0 rgba(176, 181, 187, 0.671);
+}
+
+.leaderbord__img{
+    position: absolute;
+    width: 6.5rem;
+    height: 6.5rem;
+    top: 9%;
+    left: -5%;
+}
+
+.leaderbord__wrapper-left{
+
+}
+
+.leaderbord__name{
+    padding-left: 3rem;
+    font-weight: 900;
+    font-size: 90%;
+}
+
+.leaderbord__wrapper-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.leaderbord__trees{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #518360;
+    width: 10rem;
+    height: 2.8rem;
+    border-radius: 10rem;
+    font-size: 1.7rem;
+    color: white;
+    transform: scale(90%);
+}
+
+.leaderbord__date{
+    font-size: 1.3rem;
+    color: #929292;
+    padding-bottom: 1rem;
+}
+
+.leaderbord__toForm{
+    margin-top: 3rem;
+    width: 75%;
+    height: 5.7rem;
+    border-radius: 10rem;
+    border: none;
+    background: #dc582a;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plantingProjects{
+    width: 100%;
+    background: rgba(17,50,89,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.plantingProjects__heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    color: #FFF;
+}
+
+.plantingProjects__heading h2{
+    font-size: 320%;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.plantingProjects__heading p{
+    font-size: 1.6rem;
+    width: 70%;
+    font-weight: 400;
+}
+
+.plantingProjects__progress{
+    width: 40%;
+    height: 23rem;
+    border-radius: 2.5rem;
+    padding: 2rem;
+    background: #518360;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 10rem;
+}
+
+.progress__header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.progress__heading{
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.progress__goal{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 5rem;
+    padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+}
+
+.progress__list{
+    list-style: none;
+}
+
+.progress__listCard{
+
+}
+
+.progress__link{
+    font-size: 1.4rem;
+    display: flex;
+    gap: 0.4rem;
+    color: white;
+    text-decoration: none;
+    border-bottom: 0.1rem solid white;
+    margin-right: 30%;
+}
+
+.progress__link img{
+    width: 1.5rem;
+}
+
+.plantingProjects__list{
+    background: rgba(17,50,89,1);
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100rem;
+}
+
+.plantingProjects__card{
+    min-width: 40rem;
+    width: 45rem;
+    height: 100%;
+    min-height: 35rem;
+    padding: 2rem;
+    background: #FFF;
+    color: rgba(17,50,89, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    position: relative;
+    list-style: none;
+}
+
+.plantingProjects__place{
+
+}
+
+.plantingProjects__amountTrees{
+    background: #6fba0d;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    width: 12rem;
+    height: 3rem;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plantingProjects__amountTrees:nth-of-type(2){
+    background: red;
+}
+
+.plantingProjects__description{
+    font-size: 1.7rem;
+}
+
+.plantingProjects__badge{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(30%, -30%);
+    z-index: 1;
+}
+
+.plantingProjects__sticker{
+    width: 8rem;
+    height: 8rem;
+}
+
+.plantingProjects__status{
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 800;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+}
+
+.socials{
+    background: rgba(17,50,89,1);
+    background-image: url(../img/webp/footer.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%; 
+    width: 100%;
+    height: 110rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 20rem;
+}
+
+.socials__heading{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 320%;
+    color: #FFF;
+}
+
+.socials__buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.buttonMedia{
+    list-style: none;
+    width: 4rem;
+    height: 4rem;
+    background: #DC582A;
+    border-radius: 50%;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonMedia > a{
+    color: #FFF;
+}
+
+.socials__slider{
+    width: 70%;
+    height: 25rem;
+    display:flex;
+    align-items: center;
+}
+
+.socials__slider > ul{
+    width:80%;
+}
+
+.sliderButton{
+    border: none;
+    font-size: 2.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:10%;
+}
+
+.sliderButton > button{
+    width:4rem;
+    height:4rem;
+    background: #FFF;
+    border-radius: 50%;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(17,50,89,1);
+}
+
+.sliderButton--previous{
+
+}
+
+.social__images{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.social__image{
+    width: 33%;
+    height: 100%;
+    object-fit: contain;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.social__image  img{
+    border-radius: 0.5rem;
+}
+
+.sliderButton__next{
+
+}
+
+footer{
+    background: rgba(17,50,89,1);
+    height: 8.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.footer__button{
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    background: none;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 62.5rem){
+    body{
+        min-height: 100vh;
+        width: 100%;
+        object-fit: contain;
+        background-repeat: no-repeat;
+        background-position: 0% 0%;    
+    }
+    
+    .header{
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding: 2rem;
+        justify-content: flex-start;
+    }
+    
+    .heading__title{
+        font-size: 200%;
+    }
+    
+    .heading__intro{
+        max-width: 80%;
+        background: rgba(32, 74, 125, 0.1);
+        border-radius: 2rem;
+    }
+    
+    .header__counter{
+        font-weight: 800;
+        font-size: 600%;
+        color: white;
+        text-shadow: 5px 5px rgba(17, 49, 89, 0.4);
+    }
+
+    .social__images{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6rem;
+        list-style: none;
+    }
+    
+    .social__image{
+        width: 50%;
+        height: 100%;
+        object-fit: contain;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .social__image:nth-of-type(2){
+        display: none;
+    }
+    
+    .social__image  img{
+        border-radius: 0.5rem;
+    }
+
+}
+
+@media screen and (max-width: 50rem){
+
+    .header{
+        padding: 4rem;
+    }
+    
+    .heading__title{
+        font-size: 150%;
+    }
+    
+    .heading__intro{
+        max-width: 70%;
+    }
+    
+    .header__counter{
+        font-weight: 800;
+        font-size: 300%;
+    }
+
+    .leaderbord{
+        width: 100%;
+        height: 100%;
+        padding: 4rem;
+    }
+    
+    .leaderbord__heading{
+        font-size: 220%;
+    }
+    
+    .leaderbord__card{
+        width: 100%;
+        height: 8rem;
+        padding: 2rem;
+    }
+
+    .leaderbord__toForm{
+        width: 100%;
+    }
+
+    .plantingProjects__progress{
+        display: none;
+    }
+
+    .plantingProjects__badge{
+        display: none;
+    }
+
+    .socials__heading{
+        font-size: 150%;
+    }
+
+    .social__image:nth-of-type(3){
+        display: none;
+    }
+
+    .social__images{
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6rem;
+        list-style: none;
+    }
 }
